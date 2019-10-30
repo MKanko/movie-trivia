@@ -12,6 +12,10 @@ class StatsController < ApplicationController
         stat = Stat.find_by(:id params[:stat_id])
     end
 
+    def edit
+        stat = Stat.find(params[:id])
+    end
+
     def update
         stat = Stat.find(params[:id])
         stat.update(stat_params)
