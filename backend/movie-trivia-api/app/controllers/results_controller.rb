@@ -15,6 +15,6 @@ class ResultsController < ApplicationController
     private
 
     def result_params
-        params.require(:result).permit()
+        params.require(:result).permit(:movie_title, :score, :time)
     end
 end
