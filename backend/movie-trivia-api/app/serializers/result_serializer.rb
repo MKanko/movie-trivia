@@ -1,4 +1,4 @@
 class ResultSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :movie_title, :score, :time 
 end
