@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_005849) do
+ActiveRecord::Schema.define(version: 2019_11_01_010549) do
+
+  create_table "stats", force: :cascade do |t|
+    t.string "movie_history"
+    t.string "quiz_history"
+    t.string "rating"
+    t.integer "point_total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
