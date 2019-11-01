@@ -1,4 +1,4 @@
 class StatSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :movies, :quizzes, :scores
+  attributes :movie_history, :quiz_history, :rating, :point_total
 end
