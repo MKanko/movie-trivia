@@ -24,6 +24,6 @@ class StatsController < ApplicationController
     private
 
     def stat_params
-        params.require(:stat).permit(:movies, :quizzes, :scores)
+        params.require(:stat).permit(:movie_history, :quiz_history, :rating, :point_total)
     end
 end

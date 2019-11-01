@@ -19,7 +19,7 @@ class QuizzesController < ApplicationController
     private
 
     def quiz_params
-        params.require(:quiz).permit(:movie_title, :questions, :time_limit)
+        params.require(:quiz).permit(:title, :point_value)
     end
     
 end
