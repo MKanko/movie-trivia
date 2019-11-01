@@ -1,7 +1,7 @@
 class QuizSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :point_value, :quiz_result
+  attributes :title
   belongs_to :movie
-  belongs_to :user
+  has_many :results
   has_many :questions
 end
