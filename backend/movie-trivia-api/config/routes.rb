@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :stats
-  resources :results
   resources :quizzes
   resources :movies
   resources :users
