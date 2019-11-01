@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_015004) do
+ActiveRecord::Schema.define(version: 2019_11_01_020024) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2019_11_01_015004) do
     t.boolean "quiz_result", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "movie_id"
+    t.index ["movie_id"], name: "index_quizzes_on_movie_id"
   end
 
   create_table "stats", force: :cascade do |t|
