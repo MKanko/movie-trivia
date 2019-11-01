@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_021932) do
+ActiveRecord::Schema.define(version: 2019_11_01_035949) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_11_01_021932) do
     t.integer "quiz_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "question"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
