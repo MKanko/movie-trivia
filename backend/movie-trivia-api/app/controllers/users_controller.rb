@@ -6,13 +6,16 @@ class UsersController < ApplicationController
 
     def create
         user = User.new(user_params)
-        render json: UserSerializer.new(user) 
+        options = {
+            include: [:stat]
+        }
+        render json: UserSerializer.new(user, options) 
     end 
 
     def show 
         user = User.find_by(id: params[:user_id])
         options = {
-            include: [:quiz, :stat]
+            include: [:result, :stat]
         }
         render json: UserSerializer.new(user, options)
     end
