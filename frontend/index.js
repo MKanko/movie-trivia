@@ -5,5 +5,6 @@ const QUIZZES_URL = `${BASE_URL}/quizzes`
 const main = document.getElementsByTagName('main')[0];
 
 document.addEventListener('DOMContentLoaded', function () {
-    getMovies();
+    Movie.generateMovies();
 })
+
