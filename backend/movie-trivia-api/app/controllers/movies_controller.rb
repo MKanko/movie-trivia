@@ -8,9 +8,12 @@ class MoviesController < ApplicationController
         render json: MovieSerializer.new(movie, options) 
     end 
 
-    def show
-        movie = Movie.find_by(id: params[:movie_id])
-        render json: MovieSerializer.new(movie)
+    def show 
+        movie = Movie.find(params[:id])
+        options = {
+            include: [:quizzes]
+        }
+        render json: MovieSerializer.new(movie, options)
     end
 
 end
