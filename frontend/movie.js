@@ -16,5 +16,16 @@ class Movie {
                 }
             })
     }
+
+    renderMovieLink() {
+        const div = document.createElement('div');
+        div.classList.add('movie');
+        div.dataset.dataId = this.id;
+        main.appendChild(div);
+        
+        const p = document.createElement('p');  // this needs to be an anchor tag with onclick event
+        p.innerText = this.title;               // event listener when on click invokes displayMovie
+        div.appendChild(p);
+    }
 }
 
