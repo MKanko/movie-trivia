@@ -1,4 +1,5 @@
 class Movie {
+
     constructor(title, id) {
         this.title = title;
         this.id = id;
@@ -21,16 +22,15 @@ class Movie {
         const div = document.createElement('div');
         div.classList.add('movieList');
         div.dataset.dataId = this.id;
-        main.appendChild(div);
-        
-        const p = document.createElement('p');
-        p.innerText = this.title;
-        const btn = document.createElement('button');
-        btn.innerText = 'Select Movie';
-        btn.dataset.dataMovieId = this.id;
-        p.appendChild(btn);
-        div.appendChild(p);
-        btn.addEventListener('click', function () {
+        container.appendChild(div);
+              
+        const a = document.createElement('a');
+        a.innerText = this.title;
+        a.dataset.dataMovieId = this.id;
+        a.href = '#';
+       
+        div.appendChild(a);
+        a.addEventListener('click', function () {
             Movie.generateMovie()
         } ) 
     }
@@ -41,12 +41,15 @@ class Movie {
             return response.json()
         })
         .then(function(json) {
-            movie = new Movie(json.data.attributes.title, json.data.id)
-            // TODO: iterate with map thru associated quizzes build a quiz object for each quiz
-            // pass new array of quiz objects to renderMovie
-            // but first need to create class Quiz  
+            const movie = new Movie(json.data.attributes.title, json.data.id)           
+            const quizArr = json.included.map(function (element) {
+               return new Quiz(element.attributes.title, element.id)
+            })     
+            movie.renderMovie(quizArr)           
         })
     }
+
+    
 
     
 }

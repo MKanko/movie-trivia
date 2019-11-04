@@ -9,11 +9,11 @@ class QuizzesController < ApplicationController
     end
 
     def show 
-        quiz = Quiz.find_by(id: params[:quiz_id])
+        quiz = Quiz.find(params[:id])
         options = {
             include: [:questions]
         }
-        render json: QuizSerializer.new(quizzes, options)
+        render json: QuizSerializer.new(quiz, options)
     end
     
 end
