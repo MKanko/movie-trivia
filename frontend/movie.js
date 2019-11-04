@@ -49,6 +49,14 @@ class Movie {
         })
     }
 
+    renderMovie(quizArr) {
+        const div = document.createElement('div');
+        div.classList.add('movie');
+        div.dataset.dataId = this.id;
+        container.innerHTML = '';
+        container.appendChild(div);
+    }
+
     
 
     
