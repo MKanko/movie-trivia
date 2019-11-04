@@ -67,8 +67,7 @@ class Movie {
                 Quiz.generateQuiz()
             })
         }                     
-        
-        
+               
     }
 
     
