@@ -51,8 +51,11 @@ class Movie {
 
     renderMovie(quizArr) { 
         const div = document.createElement('div');
+        const h4 = document.createElement('h4')
         div.classList.add('movie');
         div.dataset.dataId = this.id;
+        h4.innerText = this.title 
+        div.appendChild(h4)
         container.innerHTML = '';
         container.appendChild(div);
         

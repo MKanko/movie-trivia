@@ -23,4 +23,8 @@ class Quiz {
             })
     }
 
+    renderQuiz(questionArr) {
+        
+    }
+
 }
