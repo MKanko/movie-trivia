@@ -35,18 +35,18 @@ class Movie {
         } ) 
     }
 
-        static generateMovie = () => {    
+    static generateMovie = () => {    
         fetch(`${MOVIES_URL}/${event.target.dataset.dataMovieId}`)
-        .then(function(response) {
-            return response.json()
-        })
-        .then(function(json) {
-            const movie = new Movie(json.data.attributes.title, json.data.id)           
-            const quizArr = json.included.map(function (element) {
-               return new Quiz(element.attributes.title, element.id)
-            })     
-            movie.renderMovie(quizArr)           
-        })
+            .then(function(response) {
+                return response.json()
+            })
+            .then(function(json) {
+                const movie = new Movie(json.data.attributes.title, json.data.id)           
+                const quizArr = json.included.map(function (element) {
+                return new Quiz(element.attributes.title, element.id)
+                })     
+                movie.renderMovie(quizArr)           
+            })
     }
 
     renderMovie(quizArr) { 

@@ -11,4 +11,6 @@ class Question {
             this.correct_answer = correct_answer
             this.answer_context = answer_context 
         }
+
+        
 }
