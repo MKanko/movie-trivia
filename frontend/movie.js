@@ -35,7 +35,7 @@ class Movie {
         } ) 
     }
 
-    static generateMovie = () => {    
+        static generateMovie = () => {    
         fetch(`${MOVIES_URL}/${event.target.dataset.dataMovieId}`)
         .then(function(response) {
             return response.json()
@@ -49,12 +49,26 @@ class Movie {
         })
     }
 
-    renderMovie(quizArr) {
+    renderMovie(quizArr) { 
         const div = document.createElement('div');
         div.classList.add('movie');
         div.dataset.dataId = this.id;
         container.innerHTML = '';
         container.appendChild(div);
+        
+        for (const element of quizArr) {
+            const a = document.createElement('a')
+            a.innerText = element.title 
+            a.dataset.dataQuizId = element.id
+            a.href = '#'
+            div.appendChild(a)
+
+            a.addEventListener('click', function () {
+                Quiz.generateQuiz()
+            })
+        }                     
+        
+        
     }
 
     
