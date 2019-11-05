@@ -6,7 +6,7 @@ class Quiz {
     }
 
     static generateQuiz = () => {
-        fetch(`${MOVIES_URL}/${event.target.dataset.dataQuizId}`)
+        fetch(`${QUIZZES_URL}/${event.target.dataset.dataQuizId}`)
             .then(function(response) {
                 return response.json()
             })
@@ -18,13 +18,11 @@ class Quiz {
                     element.attributes.answer_option_b, element.attributes.answer_option_c,
                     element.attributes.answer_option_d, element.attributes.correct_answer,
                     element.attributes.answer_context, element.id)
-                })     
+                })    
                 quiz.renderQuiz(questionArr)           
             })
     }
 
-    renderQuiz(questionArr) {
-        
-    }
+    
 
 }

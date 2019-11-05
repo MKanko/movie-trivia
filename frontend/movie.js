@@ -60,12 +60,13 @@ class Movie {
         container.appendChild(div);
         
         for (const element of quizArr) {
+            const p = document.createElement('p')
             const a = document.createElement('a')
-            a.innerText = element.title 
+            a.innerText += element.title 
             a.dataset.dataQuizId = element.id
             a.href = '#'
-            div.appendChild(a)
-
+            p.appendChild(a)
+            div.appendChild(p)
             a.addEventListener('click', function () {
                 Quiz.generateQuiz()
             })

@@ -12,5 +12,3 @@ class Question {
             this.answer_context = answer_context 
         }
 
-        
-}
