@@ -13,6 +13,12 @@ class Question {
             this.answer_context = answer_context 
         }
 
+    generateRadioInput(answerOption) {
+        const radio = document.createElement('input')
+        const div = document.createElement('div')
+        const label = document.createElement('label')
+    }
+
     generateQuestion() {
         const div = document.createElement('div')
         const p = document.createElement('p')
@@ -20,7 +26,7 @@ class Question {
         p.innerText = `${this.question_number}.  ${this.question}`
         div.appendChild(p)
 
-        
+
     }
         
 

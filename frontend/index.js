@@ -1,8 +1,6 @@
 const BASE_URL = "http://localhost:3000"
 const MOVIES_URL = `${BASE_URL}/movies`
 const QUIZZES_URL = `${BASE_URL}/quizzes`
-const QUESTIONS_URL = `${BASE_URL}/questions`
-
 
 const main = document.getElementsByTagName('main')[0];
 const container = document.getElementById('container');
