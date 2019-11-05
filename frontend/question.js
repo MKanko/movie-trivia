@@ -17,6 +17,14 @@ class Question {
         const radio = document.createElement('input')
         const div = document.createElement('div')
         const label = document.createElement('label')
+
+        radio.type = 'radio'
+        radio.value = `answer_option_${answerOption}`
+        radio.name = `question_${this.question_number}_answer`
+        radio.id = `question_${this.question_number}_answer_${answerOption}`
+        label.for = `question_${this.question_number}_answer_${answerOption}`
+
+     
     }
 
     generateQuestion() {
@@ -25,7 +33,6 @@ class Question {
 
         p.innerText = `${this.question_number}.  ${this.question}`
         div.appendChild(p)
-
 
     }
         
