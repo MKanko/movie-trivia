@@ -33,11 +33,8 @@ class Quiz {
         container.innerHTML = '';
         container.appendChild(div);
 
-        for (const element of questionArr) {
-            const p = document.createElement('p')
-            p.innerText = `${element.question_number}.  ${element.question}`
-            // call a generation method in question class that returns what is appended to div on line 40
-            div.appendChild(p)
+        for (const element of questionArr) {          
+            div.appendChild(element.generateQuestion())            
         }
 
     }

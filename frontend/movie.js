@@ -73,9 +73,6 @@ class Movie {
         }                     
                
     }
-
-    
-
     
 }
 
