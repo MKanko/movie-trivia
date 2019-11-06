@@ -44,7 +44,7 @@ class Quiz {
         }
 
         btn.addEventListener('click', () => {
-            Answer.submitAnswers()
+            submitAnswers()
         })
 
     }
