@@ -44,12 +44,37 @@ class Quiz {
         }
 
         btn.addEventListener('click', () => {
-            submitQuizAnswers()
+            this.submitQuizAnswers()
         })
     }
 
     submitQuizAnswers() {
+        const selAns = {}
+        const rads = document.querySelectorAll('input[type=radio') 
         
+        for(const rad of rads) {
+            if (rad.checked) {
+                selAns[rad.name] = rad.value 
+            }
+        }
+        
+        fetch(RESULTS_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'  
+            },
+            body: JSON.stringify({
+              'quiz_id': this.id, 'selAnswers': selAns  
+            })
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(json) {          
+            debugger  //call a function that
+        })
+
     }
 
 }

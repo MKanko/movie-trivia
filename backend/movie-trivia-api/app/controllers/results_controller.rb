@@ -10,10 +10,17 @@ class ResultsController < ApplicationController
 
     def new
         result = Result.new
-    end 
+    end
+
+    # find quiz object by id 
+    # build a result using the quiz id and quiz title
+    # loop thru selAns and build and answer object for each one and each answer is related to the result (use result build answer)
+    # figure out quiz score based off of number of correct answers (compare sel anser with correct answer)
+    # at some point update stat object 
 
     def create
-        result = Result.new(result_params)
+        binding.pry
+        result = Result.new()
         options = {
             include: [:answers]
         }
@@ -27,12 +34,6 @@ class ResultsController < ApplicationController
         }
         render json: ResultSerializer.new(result, options)
     end
-
-    private
-
-    def result_params 
-        params.require(:result).permit(:title, :point_value, :score)
-    end 
 
     
 end

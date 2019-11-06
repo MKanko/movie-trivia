@@ -35,9 +35,7 @@ class Question {
         }
         div.appendChild(radio)
         div.appendChild(label)
-        return div
-
-     
+        return div 
     }
 
     generateQuestion() {
@@ -60,7 +58,6 @@ class Question {
             div.appendChild(this.generateRadioInput('d'))
         }
         return div
-
     }
         
 
