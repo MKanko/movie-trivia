@@ -27,11 +27,13 @@ class Quiz {
         const div = document.createElement('div');
         const h4 = document.createElement('h4')
         const btn = document.createElement('button')
+       
         div.classList.add('quiz');
         div.dataset.dataId = this.id;
         h4.innerText = this.title
         btn.dataset.dataId = this.id
         btn.innerText = 'Submit Answers'
+        
         div.appendChild(h4)
         div.appendChild(btn)  
         container.innerHTML = '';
