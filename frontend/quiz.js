@@ -43,6 +43,10 @@ class Quiz {
             div.appendChild(element.generateQuestion())            
         }
 
+        btn.addEventListener('click', () => {
+            Answer.submitAnswers()
+        })
+
     }
 
 }
