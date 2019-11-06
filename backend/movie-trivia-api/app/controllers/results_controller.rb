@@ -13,11 +13,26 @@ class ResultsController < ApplicationController
     end 
 
     def create
-        result = Result.new(user_params)
+        result = Result.new(result_params)
         options = {
             include: [:answers]
         }
         render json: ResultSerializer.new(result, options) 
     end
+
+    def show 
+        result = Result.find(params[:id])
+        options = {
+            include: [:answers]
+        }
+        render json: ResultSerializer.new(result, options)
+    end
+
+    private
+
+    def result_params 
+        params.require(:result).permit(:title, :point_value, :score)
+    end 
+
     
 end
