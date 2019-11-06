@@ -24,6 +24,19 @@ class Question {
         radio.id = `question_${this.question_number}_answer_${answerOption}`
         label.for = `question_${this.question_number}_answer_${answerOption}`
 
+        if (answerOption === 'a') {
+            label.innerText = this.answer_option_a
+        } else if (answerOption === 'b') {
+            label.innerText = this.answer_option_b
+        } else if (answerOption === 'c') {
+            label.innerText = this.answer_option_c
+        } else if (answerOption === 'd') {
+            label.innerText = this.answer_option_d
+        }
+        div.appendChild(radio)
+        div.appendChild(label)
+        return div
+
      
     }
 
