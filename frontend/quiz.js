@@ -72,8 +72,7 @@ class Quiz {
             return response.json();
         })
         .then(function(json) {
-            Result.generateResult(json)          
-              
+            Result.generateResult(json)                       
         })
 
     }
