@@ -16,8 +16,18 @@ class Result {
         result.renderResult(ansArr)
     }
  
-    renderResult() {
-        
+    renderResult(ansArr) {
+        const div = document.createElement('div')
+        const h4 = document.createElement('h4')
+        div.classList.add('result')
+        div.dataset.dataId = this.id
+        h4.innerText = this.title
+        div.appendChild(h4)
+        container.innerText = ''
+        container.appendChild(div)
+        for (const element of ansArr) {
+            div.appendChild(element.generateAnswer())
+        }
     }
 }
 
