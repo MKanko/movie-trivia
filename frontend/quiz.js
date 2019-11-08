@@ -57,7 +57,7 @@ class Quiz {
                 selAns[rad.name] = rad.value 
             }
         }
-        
+
         fetch(RESULTS_URL, {
             method: 'POST',
             headers: {
@@ -71,12 +71,15 @@ class Quiz {
         .then(function(response) {
             return response.json();
         })
-        .then(function(json) {          
-            debugger  //call a  (gen result in result class) call a static gen answer method in answer class
+        .then(function(json) {
+            Result.generateResult(json)          
+              
         })
 
     }
 
 }
+
+//call a  (gen result in result class) call a static gen answer method in answer class
 
 
