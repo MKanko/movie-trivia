@@ -19,19 +19,22 @@ class Question {
         const label = document.createElement('label')
 
         radio.type = 'radio'
-        radio.value = `answer_option_${answerOption}`
         radio.name = `question_${this.question_number}_answer`
         radio.id = `question_${this.question_number}_answer_${answerOption}`
         label.for = `question_${this.question_number}_answer_${answerOption}`
 
         if (answerOption === 'a') {
             label.innerText = this.answer_option_a
+            radio.value = this.answer_option_a
         } else if (answerOption === 'b') {
             label.innerText = this.answer_option_b
+            radio.value = this.answer_option_b
         } else if (answerOption === 'c') {
             label.innerText = this.answer_option_c
+            radio.value = this.answer_option_c
         } else if (answerOption === 'd') {
             label.innerText = this.answer_option_d
+            radio.value = this.answer_option_d
         }
         div.appendChild(radio)
         div.appendChild(label)

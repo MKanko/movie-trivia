@@ -72,9 +72,11 @@ class Quiz {
             return response.json();
         })
         .then(function(json) {          
-            debugger  //call a function that
+            debugger  //call a  (gen result in result class) call a static gen answer method in answer class
         })
 
     }
 
 }
+
+
