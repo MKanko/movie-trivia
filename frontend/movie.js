@@ -11,25 +11,28 @@ class Movie {
                 return response.json();
             })
             .then(function(json) {
+                container.innerHTML = ''
+                
                 for (const element of json.data) {
                     const movie = new Movie(element.attributes.title, element.id)
-                    movie.renderMovieList()
+                    movie.renderMovieList()                  
                 }
             })
     }
 
     renderMovieList() {
         const div = document.createElement('div');
-        div.classList.add('movieList');
-        div.dataset.dataId = this.id;
-        container.appendChild(div);
-              
         const a = document.createElement('a');
+
+        div.classList.add('movieList');
+        div.dataset.dataId = this.id;       
         a.innerText = this.title;
         a.dataset.dataMovieId = this.id;
         a.href = '#';
        
         div.appendChild(a);
+        container.appendChild(div);
+
         a.addEventListener('click', function () {
             Movie.generateMovie()
         } ) 
@@ -67,6 +70,7 @@ class Movie {
             a.href = '#'
             p.appendChild(a)
             div.appendChild(p)
+
             a.addEventListener('click', function () {
                 Quiz.generateQuiz()
             })
