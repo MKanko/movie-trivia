@@ -31,7 +31,9 @@ class ResultsController < ApplicationController
             ans.answer_context = "#{quiz.questions[index].answer_context}"
             result.score += ans.selected_answer == ans.correct_answer ? 5 : 0
             index += 1
+            #binding.pry 
         end
+        
         result.save        
         # result.answers.each do |ans|
         #     incr_score = 0

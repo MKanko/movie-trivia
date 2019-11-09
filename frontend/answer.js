@@ -15,7 +15,6 @@ class Answer {
         const p1 = document.createElement('p')
         p1.innerText = `${this.question_number}.  ${this.question}`  
         div.appendChild(p1)
-        
 
         const li1 = document.createElement('li')
         li1.innerText = `Your answer was ${this.selected_answer}.`
