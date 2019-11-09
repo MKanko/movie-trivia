@@ -5,7 +5,9 @@ class User {
         this.rating = rating 
     }
 
-    
+    static submitUser = () => {
+        
+    }
 
     
 }

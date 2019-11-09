@@ -11,8 +11,7 @@ class Movie {
                 return response.json();
             })
             .then(function(json) {
-                container.innerHTML = ''
-                
+                container.innerHTML = ''               
                 for (const element of json.data) {
                     const movie = new Movie(element.attributes.title, element.id)
                     movie.renderMovieList()                  

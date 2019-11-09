@@ -17,9 +17,13 @@ renderUserSignIn = () => {
     const input = document.createElement('input')
     const btn = document.createElement('button')
 
+    div.classList.add('user')
+    div.dataset.dataId = User.id
     h4.innerText = 'Sign in with username to play.'
     input.type = 'text'
+    input.value = ''
     input.name = 'username'
+    btn.dataset.dataId = User.id 
     btn.innerText = 'Submit'
 
     div.appendChild(h4) 
@@ -30,6 +34,7 @@ renderUserSignIn = () => {
 
     btn.addEventListener('click', function () {
         Movie.generateMovies()
+        User.submitUser()
     })
 }  
 
