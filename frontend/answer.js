@@ -1,6 +1,7 @@
 class Answer {
     
-    constructor(question, selected_answer, correct_answer, answer_context) {
+    constructor(question_number, question, selected_answer, correct_answer, answer_context) { 
+        this.question_number = question_number 
         this.question = question
         this.selected_answer = selected_answer 
         this.correct_answer = correct_answer
@@ -12,8 +13,9 @@ class Answer {
         const ul = document.createElement('ul')
 
         const p1 = document.createElement('p')
-        p1.innerText = this.question
+        p1.innerText = `${this.question_number}.  ${this.question}`  
         div.appendChild(p1)
+        
 
         const li1 = document.createElement('li')
         li1.innerText = `Your answer was ${this.selected_answer}.`

@@ -25,6 +25,7 @@ class ResultsController < ApplicationController
         index = 0
         user_ans.each do |key, value|
             ans = result.answers.build(selected_answer: user_ans[key])
+            ans.question_number = "#{quiz.questions[index].question_number}"
             ans.question = "#{quiz.questions[index].question}"
             ans.correct_answer = "#{quiz.questions[index].correct_answer}"
             ans.answer_context = "#{quiz.questions[index].answer_context}"
