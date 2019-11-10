@@ -18,9 +18,9 @@ class ResultsController < ApplicationController
     # figure out quiz score based off of number of correct answers (compare sel anser with correct answer)
     # at some point update stat object 
 
-    def create      
+    def create       
         quiz = Quiz.find(params[:quiz_id])       
-        result = Result.new(quiz_id: quiz.id, title: quiz.title, point_value: 50, user_id: 1, score: 0)       
+        result = Result.new(quiz_id: quiz.id, title: quiz.title, point_value: 50, user_id: params[:user_id], score: 0)       
         user_ans = params[:selAnswers]
         index = 0
         user_ans.each do |key, value|
@@ -32,16 +32,13 @@ class ResultsController < ApplicationController
             result.score += ans.selected_answer == ans.correct_answer ? 5 : 0
             index += 1
             #binding.pry 
-        end
+        end       
+        result.save
+        result.user.stat.update_user_stat 
         
-        result.save        
-        # result.answers.each do |ans|
-        #     incr_score = 0
-        #     if selected_answer === correct_answer
-        #         incr_score += 5
-        #     end
-        #     result.score = incr_score 
-        # end                 
+        # add code to update user stat, call a method in stat.rb 
+        # self.user.result.last   
+                        
         options = {
             include: [:answers]
         }

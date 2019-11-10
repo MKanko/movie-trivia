@@ -6,4 +6,6 @@ class Stat {
         this. rating = rating 
         this.point_total = point_total 
     }
+
+     
 }

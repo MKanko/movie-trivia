@@ -5,7 +5,10 @@ class UsersController < ApplicationController
     end 
 
     def create
-        user = User.new(user_params)
+        if !(user = User.find_by(username: params[:username]))
+            user = User.create(username: params[:username])
+            stat = Stat.create(movie_history: '', quiz_history: '', rating: '', point_total: 0, user_id: user.id) 
+        end 
         options = {
             include: [:stat]
         }
@@ -18,12 +21,6 @@ class UsersController < ApplicationController
             include: [:result, :stat]
         }
         render json: UserSerializer.new(user, options)
-    end
-
-    private 
-
-    def user_params
-        params.require(:user).permit(:username, :rating)
     end 
 
 end

@@ -50,7 +50,8 @@ class Quiz {
 
     submitQuizAnswers() {
         const selAns = {}
-        const rads = document.querySelectorAll('input[type=radio') 
+        const rads = document.querySelectorAll('input[type=radio]') 
+        const userId = document.querySelector('#user-card').dataset.userId 
         
         for(const rad of rads) {
             if (rad.checked) {
@@ -65,7 +66,7 @@ class Quiz {
               'Accept': 'application/json'  
             },
             body: JSON.stringify({
-              'quiz_id': this.id, 'selAnswers': selAns  
+              'quiz_id': this.id, 'selAnswers': selAns, 'user_id': userId   
             })
         })
         .then(function(response) {

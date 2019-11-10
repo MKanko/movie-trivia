@@ -1,11 +1,14 @@
 class User {
 
-    constructor(username, rating) {
+    constructor(username, rating, id) {
         this.username = username 
         this.rating = rating 
+        this.id = id 
     }
 
-    submitUser() {
+    static submitUser = () => {
+        const input = document.querySelector('input[type=text]')
+
         fetch(USERS_URL, {
             method: 'POST',
             headers: {
@@ -13,18 +16,30 @@ class User {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-               'user_id': this.id, 'username': input.value   
-            })
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(json) {
-                Movie.generateMovies()
+               'username': input.value   
             })
         })
-        
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(json) {
+            const user = new User(json.data.attributes.username, json.data.attributes.rating, json.data.id)
+            user.renderUser()
+            Movie.generateMovies()
+        })       
     }
 
-    
+    renderUser() {
+        const userCard = document.querySelector('#user-card')
+        const h4 = document.createElement('h4')
+        const h5 = document.createElement('h5')
+
+        h4.innerText = this.username
+        h5.innerText = this.rating
+        userCard.dataset.userId = this.id
+
+        userCard.appendChild(h4)
+        userCard.appendChild(h5)
+    }   
 }
 

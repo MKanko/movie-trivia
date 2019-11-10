@@ -4,14 +4,31 @@
     <meta charset="utf-8">
     <title>Movie Trivia</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-      <h2>Movie Trivia Challenge!</h2>
-    </header>
+    <div class="ui segment basic">
+      <header>
+        <h2>Movie Trivia Challenge!</h2>
+      </header>
+    </div>
 
     <main>
-      <div id="container"></div>
+      <div class='ui grid'>
+        <div class="row">
+          <div class='ui three wide column blue'>
+            <div class='ui segment basic' id='user-card'></div>
+          </div>
+          <div class='ui ten wide column '>
+              <div id="container" class= "ui segment green"></div>
+          </div>
+          <div class='ui three wide column '>Game Information</div>
+        </div>
+      </div>
     </main>
 
     <script src="./index.js"></script>
