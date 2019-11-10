@@ -45,7 +45,7 @@ class Question {
         const div = document.createElement('div')
         const p = document.createElement('p')
 
-        div.classList.add('ui', 'green', 'segment')
+        div.classList.add('ui', 'segment')
 
         p.innerText = `${this.question_number}.  ${this.question}`
         div.appendChild(p)

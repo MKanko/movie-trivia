@@ -25,20 +25,21 @@ class User {
         .then(function(json) {
             const user = new User(json.data.attributes.username, json.data.attributes.rating, json.data.id)
             user.renderUser()
+            Stat.renderStat()
             Movie.generateMovies()
         })       
     }
 
     renderUser() {
         const userCard = document.querySelector('#user-card')
-        const h4 = document.createElement('h4')
+        const h3 = document.createElement('h3')
         const h5 = document.createElement('h5')
 
-        h4.innerText = this.username
+        h3.innerText = this.username
         h5.innerText = this.rating
         userCard.dataset.userId = this.id
 
-        userCard.appendChild(h4)
+        userCard.appendChild(h3)
         userCard.appendChild(h5)
     }   
 }
