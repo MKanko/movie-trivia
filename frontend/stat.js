@@ -28,15 +28,12 @@ class Stat {
     renderStat() {
         const statCard = document.querySelector('#stat-card')
         const div = document.createElement('div')
-        //const h4 = document.createElement('h4')
         const h5 = document.createElement('h5')
 
-        //h4.innerText = 'Your Total Points'
         h5.innerText = `Your total points: ${this.point_total}`
         statCard.dataset.statId = this.id
         statCard.innerHTML = ''
 
-        //div.appendChild(h4)
         div.appendChild(h5)
         statCard.appendChild(div)
     }

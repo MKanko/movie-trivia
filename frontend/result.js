@@ -38,14 +38,10 @@ class Result {
             Movie.generateMovies()
         })
 
-        //const qch4 = document.createElement('h4')
         const qch5 = document.createElement('h5')
-        //qch4.innerText = 'Your Score'
         qch5.innerText = `Your Score: ${this.score} points` 
 
-        //quizCard.appendChild(qch4)
         quizCard.appendChild(qch5)
-        // extract into helper.js
 
         div.classList.add('result')
         div.dataset.dataId = this.id
