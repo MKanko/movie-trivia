@@ -24,8 +24,16 @@ class User {
         })
         .then(function(json) {
             const user = new User(json.data.attributes.username, json.data.attributes.rating, json.data.id)
+            let stat 
+            json.included.forEach(function (item) {
+                if (item.type === 'stat') {
+                    const statData = item.attributes  
+                    stat = new Stat(statData.movie_history, statData.quiz_history, statData.rating, 
+                        statData.point_total, item.id) 
+                }
+            })
             user.renderUser()
-            Stat.renderStat()
+            stat.renderStat()
             Movie.generateMovies()
         })       
     }
