@@ -53,15 +53,14 @@ class Quiz {
 
     submitQuizAnswers() {
         const selAns = {}
-        const rads = document.querySelectorAll('input[type=radio]') 
+        const radios = document.querySelectorAll('input[type=radio]') 
         const userId = document.querySelector('#user-card').dataset.userId 
         
-        for(const rad of rads) {
-            if (rad.checked) {
-                selAns[rad.name] = rad.value 
+        for(const radio of radios) {
+            if (radio.checked) {
+                selAns[radio.name] = radio.value 
             }
         }
-
         fetch(RESULTS_URL, {
             method: 'POST',
             headers: {
