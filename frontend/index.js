@@ -18,6 +18,7 @@ renderUserSignIn = () => {
     const h4 = document.createElement('h4')
     const input = document.createElement('input')
     const btn = document.createElement('button')
+    const p = document.createElement('p')
 
     div.classList.add('user')
     h4.innerText = 'Sign in with username to play.'
@@ -25,6 +26,8 @@ renderUserSignIn = () => {
     input.value = ''
     input.name = 'username'
     btn.innerText = 'Submit'
+    p.innerText = 'You must sign in with a username to play'
+    p.style.color = 'red'
 
     div.appendChild(h4) 
     div.appendChild(input) 
@@ -33,7 +36,11 @@ renderUserSignIn = () => {
     container.appendChild(div)
 
     btn.addEventListener('click', function () {
-        User.submitUser()
+        if (input.value === '') {
+            div.appendChild(p)
+        } else {
+            User.submitUser()
+        }       
     })
 }  
 
