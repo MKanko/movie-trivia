@@ -5,8 +5,8 @@ const RESULTS_URL = `${BASE_URL}/results`
 const USERS_URL = `${BASE_URL}/users`
 const STATS_URL = `${BASE_URL}/stats`
 
-const main = document.getElementsByTagName('main')[0];
-const container = document.getElementById('container');
+const main = document.getElementsByTagName('main')[0]
+const container = document.getElementById('container')
 
 document.addEventListener('DOMContentLoaded', function () {    
     renderUserSignIn()
@@ -33,7 +33,6 @@ renderUserSignIn = () => {
     container.appendChild(div)
 
     btn.addEventListener('click', function () {
-        //Movie.generateMovies()
         User.submitUser()
     })
 }  
