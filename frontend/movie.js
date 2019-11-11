@@ -6,6 +6,9 @@ class Movie {
     }
     
     static generateMovies = () => {
+        const navCard = document.querySelector('#nav-card')
+        navCard.innerHTML = ''
+        
         fetch(MOVIES_URL)
             .then(function(response) {
                 return response.json()
