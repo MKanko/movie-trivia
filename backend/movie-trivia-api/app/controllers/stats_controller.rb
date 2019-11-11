@@ -9,7 +9,9 @@ class StatsController < ApplicationController
     end
 
     def show 
-        stat = Stat.find_by(:id params[:stat_id])
+        stat = Stat.find_by(id: params[:id])
+
+        render json: StatSerializer.new(stat)
     end
 
     def edit

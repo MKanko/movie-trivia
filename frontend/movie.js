@@ -1,14 +1,14 @@
 class Movie {
 
     constructor(title, id) {
-        this.title = title;
-        this.id = id;
+        this.title = title
+        this.id = id
     }
     
     static generateMovies = () => {
         fetch(MOVIES_URL)
             .then(function(response) {
-                return response.json();
+                return response.json()
             })
             .then(function(json) {
                 container.innerHTML = ''               
@@ -20,17 +20,17 @@ class Movie {
     }
 
     renderMovieList() {
-        const div = document.createElement('div');
-        const a = document.createElement('a');
+        const div = document.createElement('div')
+        const a = document.createElement('a')
 
-        div.classList.add('movieList');
-        div.dataset.dataId = this.id;       
-        a.innerText = this.title;
-        a.dataset.dataMovieId = this.id;
-        a.href = '#';
+        div.classList.add('movieList')
+        div.dataset.dataId = this.id      
+        a.innerText = this.title
+        a.dataset.dataMovieId = this.id
+        a.href = '#'
        
-        div.appendChild(a);
-        container.appendChild(div);
+        div.appendChild(a)
+        container.appendChild(div)
 
         a.addEventListener('click', function () {
             Movie.generateMovie()
@@ -52,14 +52,14 @@ class Movie {
     }
 
     renderMovie(quizArr) { 
-        const div = document.createElement('div');
+        const div = document.createElement('div')
         const h4 = document.createElement('h4')
-        div.classList.add('movie');
-        div.dataset.dataId = this.id;
+        div.classList.add('movie')
+        div.dataset.dataId = this.id
         h4.innerText = this.title 
         div.appendChild(h4)
-        container.innerHTML = '';
-        container.appendChild(div);
+        container.innerHTML = ''
+        container.appendChild(div)
         
         for (const element of quizArr) {
             const p = document.createElement('p')

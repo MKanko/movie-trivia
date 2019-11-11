@@ -1,8 +1,8 @@
 class Quiz {
 
     constructor(title, id) {
-        this.title = title;
-        this.id = id;
+        this.title = title
+        this.id = id
     }
 
     static generateQuiz = () => {
@@ -24,24 +24,24 @@ class Quiz {
     }
 
     renderQuiz(questionArr) {
-        const div = document.createElement('div');
+        const div = document.createElement('div')
         const h4 = document.createElement('h4')
         const btn = document.createElement('button')
        
-        div.classList.add('quiz');
-        div.dataset.dataId = this.id;
+        div.classList.add('quiz')
+        div.dataset.dataId = this.id
         h4.innerText = this.title
         btn.dataset.dataId = this.id
         btn.innerText = 'Submit Answers'
-        
+        container.innerHTML = ''
+      
         div.appendChild(h4)
-        div.appendChild(btn)  
-        container.innerHTML = '';
-        container.appendChild(div);
 
         for (const element of questionArr) {          
             div.appendChild(element.generateQuestion())            
         }
+        container.appendChild(div)
+        div.appendChild(btn)
 
         btn.addEventListener('click', () => {
             this.submitQuizAnswers()
@@ -70,7 +70,7 @@ class Quiz {
             })
         })
         .then(function(response) {
-            return response.json();
+            return response.json()
         })
         .then(function(json) {
             Result.generateResult(json)
@@ -81,6 +81,6 @@ class Quiz {
 
 }
 
-//call a  (gen result in result class) call a static gen answer method in answer class
+
 
 

@@ -4,7 +4,7 @@ class Stat < ApplicationRecord
     def update_user_stat
         result = self.user.results.last
         self.point_total += result.score
-        self.save   
+        self.save    
     end 
 end
 

@@ -34,10 +34,7 @@ class ResultsController < ApplicationController
             #binding.pry 
         end       
         result.save
-        result.user.stat.update_user_stat 
-        
-        # add code to update user stat, call a method in stat.rb 
-        # self.user.result.last   
+        result.user.stat.update_user_stat  # call update_user_stat method in stat.rb   
                         
         options = {
             include: [:answers]

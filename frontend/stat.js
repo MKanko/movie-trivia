@@ -22,9 +22,7 @@ class Stat {
                     statData.point_total, json.data.id)
 
                 stat.renderStat() 
-            })    
-                           
-            
+            })                            
     }
 
     renderStat() {

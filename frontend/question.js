@@ -68,18 +68,7 @@ class Question {
 
 }
 
-        // const p = document.createElement('p')
-        // p.innerText = `${}`
-        
-
-    // radioInput = document.createElement('input')
-        //radioInput.setAttribute('type', 'radio')
-    
-    /* <input type="radio" value="value1" name="group1">
-    <input type="radio" value="value2" name="group1">
-    <input type="radio"                   value="value1"                                name="group1">
-    <input type="radio"                   value="value2"                                name="group1"> */
-                                    // this is answer_option_a or b pr c...          this is the question number (or id?)
+       
 
 
 
