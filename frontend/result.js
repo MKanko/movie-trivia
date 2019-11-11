@@ -21,41 +21,47 @@ class Result {
         const div = document.createElement('div')
         const h4 = document.createElement('h4')
 
-        // extract into helper.js
-        const navCard = document.querySelector('#nav-card')
-        const quizCard = document.querySelector('#quiz-card')
-        const btn = document.createElement('button')
-        const nch4 = document.createElement('h4')
-        nch4.innerText = 'Take Another Quiz'
-        btn.innerText = 'Movies'
-        navCard.appendChild(nch4)
-        navCard.appendChild(btn)
-
-        btn.addEventListener('click', function () {           
-            quizCard.style.display = 'none'
-            //qch4.remove()  // all three of these lines can be refactored in helper method that resets quizCard
-            qch5.remove() 
-            Movie.generateMovies()
-        })
-
-        const qch5 = document.createElement('h5')
-        qch5.innerText = `Your Score: ${this.score} points` 
-
-        quizCard.appendChild(qch5)
-
         div.classList.add('result')
         div.dataset.dataId = this.id
-        h4.innerText = this.title    
+        h4.innerText = this.title 
+
         div.appendChild(h4)
         container.innerText = ''
+
         container.appendChild(div)
         window.scrollTo(0,0)
+
+        const score = this.score 
+        renderCards(score)
         
         for (const element of ansArr) {
             div.appendChild(element.generateAnswer())
         }
     }
 }
+
+
+// // extract into helper.js
+// const navCard = document.querySelector('#nav-card')
+// const quizCard = document.querySelector('#quiz-card')
+// const btn = document.createElement('button')
+// const nch4 = document.createElement('h4')
+// nch4.innerText = 'Take Another Quiz'
+// btn.innerText = 'Movies'
+// navCard.appendChild(nch4)
+// navCard.appendChild(btn)
+
+// btn.addEventListener('click', function () {           
+//     quizCard.style.display = 'none'
+//     //qch4.remove()  // all three of these lines can be refactored in helper method that resets quizCard
+//     qch5.remove() 
+//     Movie.generateMovies()
+// })
+
+// const qch5 = document.createElement('h5')
+// qch5.innerText = `Your Score: ${this.score} points` 
+
+// quizCard.appendChild(qch5)
 
 
 
