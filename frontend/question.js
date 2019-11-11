@@ -13,6 +13,30 @@ class Question {
             this.answer_context = answer_context 
         }
 
+    generateQuestion() {
+        const div = document.createElement('div')
+        const p = document.createElement('p')
+
+        div.classList.add('ui', 'segment')
+
+        p.innerText = `${this.question_number}.  ${this.question}`
+        div.appendChild(p)
+
+        if (this.answer_option_a) {
+            div.appendChild(this.generateRadioInput('a'))
+        }
+        if (this.answer_option_b) {
+            div.appendChild(this.generateRadioInput('b'))
+        }
+        if (this.answer_option_c) {
+            div.appendChild(this.generateRadioInput('c'))
+        }
+        if (this.answer_option_d) {
+            div.appendChild(this.generateRadioInput('d'))
+        }
+        return div
+    }
+
     generateRadioInput(answerOption) {
         const radio = document.createElement('input')
         const div = document.createElement('div')
@@ -39,30 +63,6 @@ class Question {
         div.appendChild(radio)
         div.appendChild(label)
         return div 
-    }
-
-    generateQuestion() {
-        const div = document.createElement('div')
-        const p = document.createElement('p')
-
-        div.classList.add('ui', 'segment')
-
-        p.innerText = `${this.question_number}.  ${this.question}`
-        div.appendChild(p)
-
-        if (this.answer_option_a) {
-            div.appendChild(this.generateRadioInput('a'))
-        }
-        if (this.answer_option_b) {
-            div.appendChild(this.generateRadioInput('b'))
-        }
-        if (this.answer_option_c) {
-            div.appendChild(this.generateRadioInput('c'))
-        }
-        if (this.answer_option_d) {
-            div.appendChild(this.generateRadioInput('d'))
-        }
-        return div
     }
         
 
