@@ -13,9 +13,10 @@ class UsersController < ApplicationController
     end 
 
     def create
-        if !(user = User.find_by(username: params[:username]))
-            user = User.create(username: params[:username])           
-            stat = Stat.build(movie_history: '', quiz_history: '', rating: '', point_total: 0, user_id: user.id) 
+        if !(user = User.find_by(username: params[:username]))           
+            user = User.create(username: params[:username])                     
+            user.build_stat(movie_history: '', quiz_history: '', rating: '', point_total: 0) 
+            user.save
         end 
         options = {
             include: [:stat]
