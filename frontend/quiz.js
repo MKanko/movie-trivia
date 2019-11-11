@@ -27,6 +27,7 @@ class Quiz {
         const div = document.createElement('div')
         const h4 = document.createElement('h4')
         const btn = document.createElement('button')
+        const quizCard = document.querySelector('#quiz-card')
        
         div.classList.add('quiz')
         div.dataset.dataId = this.id
@@ -42,6 +43,8 @@ class Quiz {
         }
         container.appendChild(div)
         div.appendChild(btn)
+
+        quizCard.style.display = '' 
 
         btn.addEventListener('click', () => {
             this.submitQuizAnswers()
