@@ -44,8 +44,10 @@ class User {
         const h5 = document.createElement('h5')
 
         h3.innerText = this.username
+        h3.style.color = 'black'
         h5.innerText = this.rating
         userCard.dataset.userId = this.id
+        userCard.style.display = ''
 
         userCard.appendChild(h3)
         userCard.appendChild(h5)

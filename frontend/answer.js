@@ -12,7 +12,7 @@ class Answer {
         const div = document.createElement('div')
         const ul = document.createElement('ul')
 
-        div.classList.add('ui', 'segment')
+        div.classList.add('ui', 'grey', 'segment')
 
         const p1 = document.createElement('p')
         p1.innerText = `${this.question_number}.  ${this.question}`  

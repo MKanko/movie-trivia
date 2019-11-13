@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 Movie Trivia Challenge JavaScript Project
 
 A movie trivia game.
@@ -32,8 +9,9 @@ Installation and Start:
 
 1) Fork and clone this repo.
 2) Run bundle install to install required gems.
-3) 
-4) 
+3) CD into front end and open index.html with your browser.
+4) CD into backend/movie-trivia-api and start the server with rails s command.
+5) Refresh index.html in your browser.
 ___________________________________________________________________
 
 Contributors Guide:
@@ -51,4 +29,4 @@ ________________________________________________________________________________
 
 This project has been licensed under the MIT open source license:
 
-https://github.com/MKanko/Nexus/blob/master/LICENSE.md
+https://github.com/MKanko/movie-trivia/blob/master/LICENSE.md

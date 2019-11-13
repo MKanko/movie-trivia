@@ -17,7 +17,7 @@ class Stat {
                 return response.json()
             })
             .then(function(json) {
-                const statData = json.data.attributes  
+                const statData = json.data.attributes   
                 const stat = new Stat(statData.movie_history, statData.quiz_history, statData.rating, 
                     statData.point_total, json.data.id)
 

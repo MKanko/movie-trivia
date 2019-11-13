@@ -9,25 +9,35 @@ class Movie {
         const navCard = document.querySelector('#nav-card')
         navCard.innerHTML = ''
         
-        fetch(MOVIES_URL)
-            .then(function(response) {
-                return response.json()
-            })
-            .then(function(json) {
-                container.innerHTML = ''               
-                for (const element of json.data) {
-                    const movie = new Movie(element.attributes.title, element.id)
-                    movie.renderMovieList()                  
-                }
-            })
+        fetch(MOVIES_URL, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(json) {
+            container.innerHTML = ''
+            const h4 = document.createElement('h4')
+            h4.innerText = 'Movie List'
+            container.appendChild(h4)
+                            
+            for (const element of json.data) {
+                const movie = new Movie(element.attributes.title, element.id)
+                movie.renderMovieList()                  
+            }
+        })
     }
 
     renderMovieList() {
-        const div = document.createElement('div')
+        const div = document.createElement('div')      
         const a = document.createElement('a')
 
         div.classList.add('movieList')
-        div.dataset.dataId = this.id      
+        div.dataset.dataId = this.id         
         a.innerText = this.title
         a.dataset.dataMovieId = this.id
         a.href = '#'
@@ -41,7 +51,13 @@ class Movie {
     }
 
     static generateMovie = () => {    
-        fetch(`${MOVIES_URL}/${event.target.dataset.dataMovieId}`)
+        fetch(`${MOVIES_URL}/${event.target.dataset.dataMovieId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
             .then(function(response) {
                 return response.json()
             })

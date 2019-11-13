@@ -6,8 +6,9 @@ class Stat < ApplicationRecord
         self.point_total += result.score
         self.save    
     end 
+    
 end
 
 
-# declare variable equal to the above the use that variable to access the attributes needed from that object
-    # to update the user stat attributes
+# declare variable and set it equal users last result, then use that variable to access the attributes 
+# needed from that object (user.result.last) to update the user stat attributes

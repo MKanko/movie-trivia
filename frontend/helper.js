@@ -8,7 +8,7 @@ const renderCards = (score) => {
     const h42 = document.createElement('h4')
     const btn2 = document.createElement('button')
 
-    h5.innerText = `Your score ${score} points`
+    h5.innerText = `Your score: ${score} points`
     h4.innerText = 'Take another quiz'
     btn.innerText = 'Movies'
     h42.innerText = 'Finished Playing'
@@ -37,10 +37,10 @@ const renderCards = (score) => {
         const quizCard = document.querySelector('#quiz-card')
         const navCard = document.querySelector('#nav-card')
 
-        userCard.style.display = 'none'
-        statCard.style.display = 'none'
+        userCard.innerHTML = ''
+        statCard.innerHTML = ''
         quizCard.style.display = 'none'
-        navCard.style.display = 'none'
+        navCard.innerHTML = ''
 
         renderUserSignIn()
     }
