@@ -4,6 +4,8 @@ class Movie {
         this.title = title
         this.id = id
     }
+
+    // comment 
     
     static generateMovies = () => {
         const navCard = document.querySelector('#nav-card')
